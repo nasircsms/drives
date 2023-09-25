@@ -29,7 +29,7 @@ struct CityBeeTier {
 
 		timeCost = fmin(27.89, timeCost)
 
-		var baseDays = baseDays
+        var baseDays = self.baseDays
 		if timeCost <= 27.89 && days == 1 { baseDays = max(1, baseDays) }
 		let extraDays = max(0, days - baseDays)
 

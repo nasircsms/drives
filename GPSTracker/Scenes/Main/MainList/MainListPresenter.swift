@@ -116,7 +116,7 @@ class MainListPresenter: MainListPresentationLogic {
         if let firstDrive = response.fetchedDrives.first {
             let lastDrive = response.fetchedDrives.last!
             
-            let daysBetween = Date.daysBetween(start: Date.init(timeIntervalSince1970: firstDrive.startTime), end: Date.init(timeIntervalSince1970: lastDrive.startTime))
+            let daysBetween = max(Date.daysBetween(start: Date.init(timeIntervalSince1970: firstDrive.startTime), end: Date.init(timeIntervalSince1970: lastDrive.startTime)), 1)
             
             for drive in response.fetchedDrives {
                 yearDistance += drive.totalDistance
@@ -135,7 +135,8 @@ class MainListPresenter: MainListPresentationLogic {
             let monthDrives = Double(response.fetchedDrives.count) / monthsInGivenYear
             
             let ratio = 365.0/Double(daysBetween)
-            let drivingDays = (daysBetween > 340) ? driveDaysInAYear.count : Int(Double(driveDaysInAYear.count) * ratio)
+            let value1 = Double(driveDaysInAYear.count) * ratio
+            let drivingDays = (daysBetween > 340) ? driveDaysInAYear.count : Int(value1)
             let drives = (daysBetween > 340) ? response.fetchedDrives.count : Int(Double(response.fetchedDrives.count) * ratio)
             
             

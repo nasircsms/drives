@@ -93,8 +93,8 @@ class CarDataDownloader: CarDataDownloaderLogic {
 		DispatchQueue.background(background: {
 			// do something in background
 
-			let string = PrivateGatesHelperWorker.myCarDataServerUrlString
-//			let string = "https://api.npoint.io/3547e169b48658ed9d65" // Demo data
+//			let string = PrivateGatesHelperWorker.myCarDataServerUrlString
+			let string = "https://api.npoint.io/3547e169b48658ed9d65" // Demo data
 
 			//This is how my demo payload will look.
 			// costs: simply contains for each month I had a car - total cost for car for that month

@@ -74,7 +74,7 @@ struct CarGuruTier {
 
 		timeCost = fmin(44.99, timeCost)
 
-		var baseDays = baseDays
+        var baseDays = self.baseDays
 
 		if timeCost < 44.99 && totalDriveDays == 1 { baseDays = max(1, baseDays) }
 

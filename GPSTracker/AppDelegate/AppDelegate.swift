@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Sentry
+//import Sentry
 import UserNotifications
 import UserNotificationsUI
 import WatchConnectivity
@@ -29,14 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             _ = WatchConnectionWorker.shared
         }
         
-		SentrySDK.start { options in
-			options.dsn = "https://da766b8be7b3499580d043df9176bcdb@o115860.ingest.sentry.io/6235431"
-			options.debug = true // Enabled debug when first installing is always helpful
-
-			// Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-			// We recommend adjusting this value in production.
-			options.tracesSampleRate = 0.8
-		}
+//		SentrySDK.start { options in
+//			options.dsn = "https://da766b8be7b3499580d043df9176bcdb@o115860.ingest.sentry.io/6235431"
+//			options.debug = true // Enabled debug when first installing is always helpful
+//
+//			// Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+//			// We recommend adjusting this value in production.
+//			options.tracesSampleRate = 0.8
+//		}
 
 		// To initiate it.
 		_ = AppSettingsWorker.shared
@@ -86,19 +86,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func applicationWillTerminate(_ application: UIApplication) {
-		let crumb = Breadcrumb()
-		crumb.level = SentryLevel.info
-		crumb.category = "problem"
-		crumb.message = "applicationWillTerminate"
-		SentrySDK.addBreadcrumb(crumb: crumb)
+//		let crumb = Breadcrumb()
+//		crumb.level = SentryLevel.info
+//		crumb.category = "problem"
+//		crumb.message = "applicationWillTerminate"
+//		SentrySDK.addBreadcrumb(crumb: crumb)
 	}
 
 	func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
-		let crumb = Breadcrumb()
-		crumb.level = SentryLevel.info
-		crumb.category = "problem"
-		crumb.message = "applicationDidReceiveMemoryWarning"
-		SentrySDK.addBreadcrumb(crumb: crumb)
+//		let crumb = Breadcrumb()
+//		crumb.level = SentryLevel.info
+//		crumb.category = "problem"
+//		crumb.message = "applicationDidReceiveMemoryWarning"
+//		SentrySDK.addBreadcrumb(crumb: crumb)
 	}
  
 	// MARK: Functions

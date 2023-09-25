@@ -48,13 +48,13 @@ class WatchConnectionWorker: NSObject, WCSessionDelegate {
         if(message.keys.contains("ping")) {
             replyHandler(["ping":"ping"])
         } else {
-            PrivateGatesHelperWorker.openTheGates { success in
-                if success {
-                    replyHandler(["success":"1"])
-                } else {
-                    replyHandler(["failure":"0"])
-                }
-            }
+//            PrivateGatesHelperWorker.openTheGates { success in
+//                if success {
+//                    replyHandler(["success":"1"])
+//                } else {
+//                    replyHandler(["failure":"0"])
+//                }
+//            }
             
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
 //                if(Bool.random()) {
